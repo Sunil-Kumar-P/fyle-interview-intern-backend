@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  fyle_backend:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=core/server.py
+    command: ["sed", " -i 's/\r$//' run.sh"]
